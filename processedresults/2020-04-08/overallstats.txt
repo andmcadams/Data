@@ -136,6 +136,12 @@
 	Total KC:            	54491326
 	Average KC/Player:   	290.08046888724454
 
+34 - Kraken
+	Players:             	175460
+	Pages:               	7019
+	Total KC:            	233694936
+	Average KC/Player:   	1331.898643565485
+
 35 - Kree'Arra
 	Players:             	44306
 	Pages:               	1773
@@ -196,6 +202,12 @@
 	Total KC:            	5807800
 	Average KC/Player:   	463.5855683269476
 
+46 - Thermonuclear Smoke Devil
+	Players:             	77561
+	Pages:               	3103
+	Total KC:            	56118541
+	Average KC/Player:   	723.5407098928586
+
 47 - TzKal-Zuk
 	Players:             	2869
 	Pages:               	115
@@ -219,4 +231,16 @@
 	Pages:               	605
 	Total KC:            	3323615
 	Average KC/Player:   	219.8158068783069
+
+51 - Vorkath
+	Players:             	166980
+	Pages:               	6680
+	Total KC:            	88384825
+	Average KC/Player:   	529.3138399808361
+
+54 - Zulrah
+	Players:             	143667
+	Pages:               	5747
+	Total KC:            	162916359
+	Average KC/Player:   	1133.9859466683372
 
