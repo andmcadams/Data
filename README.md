@@ -1,4 +1,5 @@
 # Data
+A very basic graph view of this data can be found at https://andmcadams.github.io/Data/
 
 All data were pulled from OSRS hiscores pages.
 
