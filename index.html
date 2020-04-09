@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="datavals.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      var chart;
+      var view;
+      var deltaView;
+      var options;
+      var currentView;
+      function drawChart() {
+
+        // Create the data table.
+
+				var dataTab = new google.visualization.DataTable(data);
+				var deltaTab = new google.visualization.DataTable(deltaData)
+
+        // Set chart options
+        options = {'title':'Kills per day'};
+
+        // Instantiate and draw our chart, passing in some options.
+				// Create a view that shows everyone hired since 2007.
+				view = new google.visualization.DataView(dataTab);
+				deltaView = new google.visualization.DataView(deltaTab);
+				currentView = deltaView
+				currentView.setColumns([0, 1]);
+        chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(currentView, options);
+      }
+
+      function updateBoss(selectObject) {
+      	let val = parseInt(selectObject.value)
+        currentView.setColumns([0, val]);
+
+        chart.draw(currentView, options);
+      }
+      function updateType(selectObject) {
+      	let val = parseInt(selectObject.value)
+      	let cols = currentView.getViewColumns()
+      	if (val === 0) {
+      		currentView = deltaView
+      		options = {'title':'Kills per day'};
+      	}
+      	else {
+      		currentView = view
+      		options = {'title':'Total kill count'}
+      	}
+      	currentView.setColumns(cols)
+      	chart.draw(currentView, options)
+      }
+    </script>
+  </head>
+
+  <body>
+    <!--Div that will hold the pie chart-->
+    <select onchange="updateBoss(this)">
+			<option value=1>Abyssal Sire</option>
+			<option value=2>Alchemical Hydra</option>
+			<option value=3>Barrows Chests</option>
+			<option value=4>Bryophyta</option>
+			<option value=5>Callisto</option>
+			<option value=6>Cerberus</option>
+			<option value=7>CoX</option>
+			<option value=8>Cox CM</option>
+			<option value=9>Chaos Elemental</option>
+			<option value=10>Chaos Fanatic</option>
+			<option value=11>Commander Zilyana</option>
+			<option value=12>Corporeal Beast</option>
+			<option value=13>Crazy Archaeologist</option>
+			<option value=14>Dagannoth Prime</option>
+			<option value=15>Dagannoth Rex</option>
+			<option value=16>Dagannoth Supreme</option>
+			<option value=17>Deranged Archaeologist</option>
+			<option value=18>General Graardor</option>
+			<option value=19>Giant Mole</option>
+			<option value=20>Grotesque Guardians</option>
+			<option value=21>Hespori</option>
+			<option value=22>Kalphite Queen</option>
+			<option value=23>King Black Dragon</option>
+			<option value=24>Kraken</option>
+			<option value=25>Kree'Arra</option>
+			<option value=26>K'ril Tsutsaroth</option>
+			<option value=27>Mimic</option>
+			<option value=28>Obor</option>
+			<option value=29>Sarachnis</option>
+			<option value=30>Scorpia</option>
+			<option value=31>Skotizo</option>
+			<option value=32>The Gauntlet</option>
+			<option value=33>The Corrupted Gauntlet</option>
+			<option value=34>Theatre of Blood</option>
+			<option value=35>Thermonuclear Smoke Devil</option>
+			<option value=36>TzKal-Zuk</option>
+			<option value=37>TzTok-Jad</option>
+			<option value=38>Venenatis</option>
+			<option value=39>Vet'ion</option>
+			<option value=40>Vorkath</option>
+			<option value=41>Zulrah</option>
+		</select>
+		<select onchange="updateType(this)">
+			<option value=0>Delta</option>
+			<option value=1>Total KC</option>
+		</select>
+    <div id="chart_div"></div>
+  </body>
+</html>
