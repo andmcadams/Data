@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 import boto3
 import sys
 import random
+from botocore.config import Config
 
 proxies = ['getHiscores{}'.format(i) for i in range(1, 11)]
 functionArn = json.load(open('secrets.json'))['arn']
@@ -22,7 +23,12 @@ def getPagesToRetrieve(tolerance, retrievedPages):
 		thisPageIndex = i
 
 		# Get the last number from the previous page
-		prevPageVal = retrievedPages[prevPageIndex][-1]
+		# Handle if page 1 is not actually retrieved.
+		if retrievedPages[prevPageIndex] != None:
+			prevPageVal = retrievedPages[prevPageIndex][-1]
+		else:
+			# Sadly there isn't a much more elegant solution since maxint was removed
+			prevPageVal = 100000000
 
 		thisPageVal = thisPage[0]
 
@@ -84,7 +90,8 @@ def makeCall(lambda_client, queue, tableNum):
 
 def retrieve(tolerance, pageSpacing, tableNum):
 	startTime = datetime.datetime.now()
-	lambda_client = boto3.client('lambda')
+	config = Config(read_timeout=180)
+	lambda_client = boto3.client('lambda', config=config)
 	retrieved = {}
 	calls = 0
 	#retrieve every 100 pages until an out of bounds occurs
@@ -99,6 +106,8 @@ def retrieve(tolerance, pageSpacing, tableNum):
 		print('Received response...')
 		content = json.loads(response['Payload'].read())
 		print(content)
+		if not 'body' in content:
+			continue
 		# Add responses to retrieved
 		last = addResponse(content, retrieved) or last
 		# Check for oob
@@ -127,7 +136,9 @@ def retrieve(tolerance, pageSpacing, tableNum):
 
 		calls += 1
 		content = json.loads(response['Payload'].read())
-
+		if not 'body' in content:
+			step -= 1
+			continue
 		last = addResponse(content, retrieved)
 		r = isLast(start, content)
 		#if r is None, r is oob
