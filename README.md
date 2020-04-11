@@ -15,4 +15,4 @@ The master script is run at around 04:00 UTC every day to scrape the hiscores pa
 
 Missing/Incomplete Results due to Hiscores Being Down
 * 2020-04-10
-* 2020-04-11 (late)
+* 2020-04-11
