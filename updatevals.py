@@ -2,6 +2,7 @@ import csv
 import sys
 import os
 import json
+import datetime
 
 names=["Abyssal Sire", "Alchemical Hydra", "Barrows Chests", "Bryophyta", "Callisto", "Cerberus", "CoX", "Cox CM", "Chaos Elemental", "Chaos Fanatic", "Commander Zilyana", "Corporeal Beast", "Crazy Archaeologist", "Dagannoth Prime", "Dagannoth Rex", "Dagannoth Supreme", "Deranged Archaeologist", "General Graardor", "Giant Mole", "Grotesque Guardians", "Hespori", "Kalphite Queen", "King Black Dragon", "Kraken", "Kree'Arra", "K'ril Tsutsaroth", "Mimic", "Obor", "Sarachnis", "Scorpia", "Skotizo", "The Gauntlet", "The Corrupted Gauntlet", "Theatre of Blood", "Thermonuclear Smoke Devil", "TzKal-Zuk", "TzTok-Jad", "Venenatis", "Vet'ion", "Vorkath", "Zulrah"]
 tableNums = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 54]
@@ -40,7 +41,6 @@ for k in sorted(results.keys()):
 	killarr = results[k]
 	killdelta = [int(killarr[j]) - int(killarr[max(0, j-1)]) for j in range(len(killarr))]
 
-print(results)
 cols = []
 cols.append({'id': 'date', 'label': 'Date', 'type': 'date'})
 for i in range(len(names)):
@@ -70,6 +70,14 @@ for i in range(len(filenames)):
 	# Subtract 1 from month to account for the dumb way js handles dates
 	month = int(filenames[i][5:7])-1
 	day = int(filenames[i][8:])
+	currentDate = datetime.date(year, month+1, day)
+	nyear = int(filenames[i+1][:4])
+	# Subtract 1 from month to account for the dumb way js handles dates
+	nmonth = int(filenames[i+1][5:7])-1
+	nday = int(filenames[i+1][8:])
+	nDate = datetime.date(nyear, nmonth+1, nday)
+	if (nDate-currentDate).days != 1:
+		continue
 	rowdata = ['Date({},{},{})'.format(year, month, day)]
 	for j in results:
 		rowdata.append(int(results[j][i+1]) - int(results[j][i]))
