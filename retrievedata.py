@@ -137,7 +137,7 @@ def retrieve(tolerance, pageSpacing, tableNum):
 		calls += 1
 		content = json.loads(response['Payload'].read())
 		if not 'body' in content:
-			step -= 1
+			steps -= 1
 			continue
 		last = addResponse(content, retrieved)
 		r = isLast(start, content)
