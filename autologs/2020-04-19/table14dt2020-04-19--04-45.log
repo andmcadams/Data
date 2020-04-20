@@ -1,0 +1,71 @@
+Trying queue: [1, 101, 201, 301, 401, 501, 601, 701, 801, 901]
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores4
+Received response...
+{'status': 200, 'body': '{"pageData": {"1": [null, null], "101": [[55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55], false], "201": [[35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35], false], "301": [null, null], "401": [[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20], false], "501": [null, null], "601": [null, null], "701": [null, null], "801": [null, null], "901": [null, false]}}'}
+{'1': [None, None], '101': [[55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55, 55], False], '201': [[35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35, 35], False], '301': [None, None], '401': [[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20], False], '501': [None, None], '601': [None, None], '701': [None, None], '801': [None, None], '901': [None, False]}
+dict_keys(['1', '101', '201', '301', '401', '501', '601', '701', '801', '901'])
+[101, 201, 401]
+Looking for last page...
+Trying page 401
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores8
+{'401': [[20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20], False]}
+dict_keys(['401'])
+[401]
+Trying page 451
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores7
+{'451': [[18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18], False]}
+dict_keys(['451'])
+[451]
+Trying page 476
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores4
+Trying page 476
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores7
+{'476': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['476'])
+[476]
+Trying page 482
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores6
+{'482': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['482'])
+[482]
+Trying page 485
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores2
+{'485': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['485'])
+[485]
+Trying page 486
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores3
+{'486': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['486'])
+[486]
+Trying page 487
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores9
+{'487': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['487'])
+[487]
+Trying page 488
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores5
+{'488': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['488'])
+[488]
+Trying page 489
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores8
+{'489': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['489'])
+[489]
+Trying page 490
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores4
+{'490': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['490'])
+[490]
+Trying page 491
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores3
+{'491': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['491'])
+[491]
+Trying page 492
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores1
+{'492': [[17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17, 17], False]}
+dict_keys(['492'])
+[492]
+Could not find last page after 12 attempts. Aborting...
