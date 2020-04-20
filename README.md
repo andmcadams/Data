@@ -17,3 +17,4 @@ Missing/Incomplete Results due to Hiscores Being Down
 * 2020-04-10
 * 2020-04-11
 * 2020-04-12
+* 2020-04-19
