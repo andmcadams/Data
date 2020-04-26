@@ -5,6 +5,8 @@
     <script type="text/javascript" src="datavals.js"></script>
     <script type="text/javascript">
 
+    	var minValues = [-1, 50, 50, 50, 10, 50, 50, 50, 10, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 10, 50, 50, 50, 50, 50, 2, 10, 50, 50, 10, 50, 10, 50, 50, 2, 10, 50, 50, 50, 50]
+
       // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
 
@@ -19,6 +21,8 @@
       var deltaView;
       var options;
       var currentView;
+
+      var otherInfo = document.getElementById('other_info');
       function drawChart() {
 
         // Create the data table.
@@ -27,7 +31,7 @@
 				var deltaTab = new google.visualization.DataTable(deltaData)
 
         // Set chart options
-        options = {'title':'Kills per day'};
+        options = {'title':'Kills per day', 'pointSize': 5};
 
         // Instantiate and draw our chart, passing in some options.
 				// Create a view that shows everyone hired since 2007.
@@ -37,6 +41,10 @@
 				currentView.setColumns([0, 1]);
         chart = new google.visualization.LineChart(document.getElementById('chart_div'));
         chart.draw(currentView, options);
+        if (otherInfo == null) {
+        	otherInfo = document.getElementById('other_info');
+        }
+        otherInfo.innerText = "Minimum kills: " + minValues[1]
       }
 
       function updateBoss(selectObject) {
@@ -44,17 +52,22 @@
         currentView.setColumns([0, val]);
 
         chart.draw(currentView, options);
+        if (otherInfo == null) {
+        	otherInfo = document.getElementById('other_info');
+        }
+        otherInfo.innerText = "Minimum kills: " + minValues[val]
       }
+      
       function updateType(selectObject) {
       	let val = parseInt(selectObject.value)
       	let cols = currentView.getViewColumns()
       	if (val === 0) {
       		currentView = deltaView
-      		options = {'title':'Kills per day'};
+      		options = {'title':'Kills per day', 'pointSize': 5};
       	}
       	else {
       		currentView = view
-      		options = {'title':'Total kill count'}
+      		options = {'title':'Total kill count', 'pointSize': 5}
       	}
       	currentView.setColumns(cols)
       	chart.draw(currentView, options)
@@ -112,5 +125,6 @@
 			<option value=1>Total KC</option>
 		</select>
     <div id="chart_div"></div>
+    <div id="other_info"></div>
   </body>
 </html>
