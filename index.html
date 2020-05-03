@@ -3,9 +3,60 @@
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="datavals.js"></script>
-    <script type="text/javascript">
+  </head>
 
-    	var minValues = [-1, 50, 50, 50, 10, 50, 50, 50, 10, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 10, 50, 50, 50, 50, 50, 2, 10, 50, 50, 10, 50, 10, 50, 50, 2, 10, 50, 50, 50, 50]
+  <body>
+    <select onchange="updateBoss(this)">
+			<option value=11>Abyssal Sire</option>
+			<option value=12>Alchemical Hydra</option>
+			<option value=13>Barrows Chests</option>
+			<option value=14>Bryophyta</option>
+			<option value=15>Callisto</option>
+			<option value=16>Cerberus</option>
+			<option value=17>CoX</option>
+			<option value=18>Cox CM</option>
+			<option value=19>Chaos Elemental</option>
+			<option value=20>Chaos Fanatic</option>
+			<option value=21>Commander Zilyana</option>
+			<option value=22>Corporeal Beast</option>
+			<option value=23>Crazy Archaeologist</option>
+			<option value=24>Dagannoth Prime</option>
+			<option value=25>Dagannoth Rex</option>
+			<option value=26>Dagannoth Supreme</option>
+			<option value=27>Deranged Archaeologist</option>
+			<option value=28>General Graardor</option>
+			<option value=29>Giant Mole</option>
+			<option value=30>Grotesque Guardians</option>
+			<option value=31>Hespori</option>
+			<option value=32>Kalphite Queen</option>
+			<option value=33>King Black Dragon</option>
+			<option value=34>Kraken</option>
+			<option value=35>Kree'Arra</option>
+			<option value=36>K'ril Tsutsaroth</option>
+			<option value=37>Mimic</option>
+			<option value=39>Obor</option>
+			<option value=40>Sarachnis</option>
+			<option value=41>Scorpia</option>
+			<option value=42>Skotizo</option>
+			<option value=43>The Gauntlet</option>
+			<option value=44>The Corrupted Gauntlet</option>
+			<option value=45>Theatre of Blood</option>
+			<option value=46>Thermonuclear Smoke Devil</option>
+			<option value=47>TzKal-Zuk</option>
+			<option value=48>TzTok-Jad</option>
+			<option value=49>Venenatis</option>
+			<option value=50>Vet'ion</option>
+			<option value=51>Vorkath</option>
+			<option value=54>Zulrah</option>
+		</select>
+		<select onchange="updateType(this)">
+			<option value=0>Delta</option>
+			<option value=1>Total KC</option>
+		</select>
+    <div id="chart_div"></div>
+    <div id="other_info">
+    </div>
+    <script type="text/javascript">
 
       // Load the Visualization API and the corechart package.
       google.charts.load('current', {'packages':['corechart']});
@@ -23,108 +74,90 @@
       var currentView;
 
       var otherInfo = document.getElementById('other_info');
+
+      function addInfo(infoIndex) {
+        console.log(infoIndex);
+        console.log(minValues[infoIndex]);
+      // <table>
+      //   <tr>
+      //     <td>Minimum kills on leaderboard</td>
+      //     <td>Company</td>
+      //   </tr>
+      //   <tr>
+      //     <td>Alfreds Futterkiste</td>
+      //     <td>Maria Anders</td>
+      //     <td>Germany</td>
+      //   </tr>
+      // </table>
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+        otherInfo.textContent = '';
+        let t  = document.createElement('table');
+        let topRow = t.insertRow();
+        let minKills = topRow.insertCell();
+        minKills.appendChild(document.createTextNode('Minimum kills to be on leaderboard: ' + minValues[infoIndex]));
+        let currentPlayers = topRow.insertCell();
+        currentPlayers.appendChild(document.createTextNode('Current players on leaderboard: ' + numberWithCommas(players[infoIndex])));
+        let bottomRow = t.insertRow();
+        let maxKills = bottomRow.insertCell();
+        maxKills.appendChild(document.createTextNode('Maximum kills per day: ' + numberWithCommas(max_day[infoIndex])));
+        let avgKills = bottomRow.insertCell();
+        avgKills.appendChild(document.createTextNode('Average kills per day: ' + numberWithCommas(avg_day[infoIndex])));
+        otherInfo.appendChild(t);
+      }
+
+      function resolveBoss(bossNumber) {
+        for(let i = 1; i < view.Kb.Ff.length; i++) {
+          if (view.Kb.Ff[i]["id"] === bossNumber)
+            return i;
+        }
+        return null;
+      }
+
       function drawChart() {
 
         // Create the data table.
 
-				var dataTab = new google.visualization.DataTable(data);
-				var deltaTab = new google.visualization.DataTable(deltaData)
+        var dataTab = new google.visualization.DataTable(data);
+        var deltaTab = new google.visualization.DataTable(deltaData);
 
         // Set chart options
         options = {'title':'Kills per day', 'pointSize': 5};
 
         // Instantiate and draw our chart, passing in some options.
-				// Create a view that shows everyone hired since 2007.
-				view = new google.visualization.DataView(dataTab);
-				deltaView = new google.visualization.DataView(deltaTab);
-				currentView = deltaView
-				currentView.setColumns([0, 1]);
+        // Create a view that shows everyone hired since 2007.
+        view = new google.visualization.DataView(dataTab);
+        deltaView = new google.visualization.DataView(deltaTab);
+        currentView = deltaView
+        currentView.setColumns([0, 1]);
         chart = new google.visualization.LineChart(document.getElementById('chart_div'));
         chart.draw(currentView, options);
-        if (otherInfo == null) {
-        	otherInfo = document.getElementById('other_info');
-        }
-        otherInfo.innerText = "Minimum kills: " + minValues[1]
+        addInfo(resolveBoss(11));
       }
 
       function updateBoss(selectObject) {
-      	let val = parseInt(selectObject.value)
-        currentView.setColumns([0, val]);
+        let val = parseInt(selectObject.value)
+        currentView.setColumns([0, resolveBoss(val)]);
 
         chart.draw(currentView, options);
-        if (otherInfo == null) {
-        	otherInfo = document.getElementById('other_info');
-        }
-        otherInfo.innerText = "Minimum kills: " + minValues[val]
+        addInfo(resolveBoss(val));
       }
       
       function updateType(selectObject) {
-      	let val = parseInt(selectObject.value)
-      	let cols = currentView.getViewColumns()
-      	if (val === 0) {
-      		currentView = deltaView
-      		options = {'title':'Kills per day', 'pointSize': 5};
-      	}
-      	else {
-      		currentView = view
-      		options = {'title':'Total kill count', 'pointSize': 5}
-      	}
-      	currentView.setColumns(cols)
-      	chart.draw(currentView, options)
+        let val = parseInt(selectObject.value)
+        let cols = currentView.getViewColumns()
+        if (val === 0) {
+          currentView = deltaView
+          options = {'title':'Kills per day', 'pointSize': 5};
+        }
+        else {
+          currentView = view
+          options = {'title':'Total kill count', 'pointSize': 5}
+        }
+        currentView.setColumns(cols)
+        chart.draw(currentView, options)
       }
     </script>
-  </head>
-
-  <body>
-    <!--Div that will hold the pie chart-->
-    <select onchange="updateBoss(this)">
-			<option value=1>Abyssal Sire</option>
-			<option value=2>Alchemical Hydra</option>
-			<option value=3>Barrows Chests</option>
-			<option value=4>Bryophyta</option>
-			<option value=5>Callisto</option>
-			<option value=6>Cerberus</option>
-			<option value=7>CoX</option>
-			<option value=8>Cox CM</option>
-			<option value=9>Chaos Elemental</option>
-			<option value=10>Chaos Fanatic</option>
-			<option value=11>Commander Zilyana</option>
-			<option value=12>Corporeal Beast</option>
-			<option value=13>Crazy Archaeologist</option>
-			<option value=14>Dagannoth Prime</option>
-			<option value=15>Dagannoth Rex</option>
-			<option value=16>Dagannoth Supreme</option>
-			<option value=17>Deranged Archaeologist</option>
-			<option value=18>General Graardor</option>
-			<option value=19>Giant Mole</option>
-			<option value=20>Grotesque Guardians</option>
-			<option value=21>Hespori</option>
-			<option value=22>Kalphite Queen</option>
-			<option value=23>King Black Dragon</option>
-			<option value=24>Kraken</option>
-			<option value=25>Kree'Arra</option>
-			<option value=26>K'ril Tsutsaroth</option>
-			<option value=27>Mimic</option>
-			<option value=28>Obor</option>
-			<option value=29>Sarachnis</option>
-			<option value=30>Scorpia</option>
-			<option value=31>Skotizo</option>
-			<option value=32>The Gauntlet</option>
-			<option value=33>The Corrupted Gauntlet</option>
-			<option value=34>Theatre of Blood</option>
-			<option value=35>Thermonuclear Smoke Devil</option>
-			<option value=36>TzKal-Zuk</option>
-			<option value=37>TzTok-Jad</option>
-			<option value=38>Venenatis</option>
-			<option value=39>Vet'ion</option>
-			<option value=40>Vorkath</option>
-			<option value=41>Zulrah</option>
-		</select>
-		<select onchange="updateType(this)">
-			<option value=0>Delta</option>
-			<option value=1>Total KC</option>
-		</select>
-    <div id="chart_div"></div>
-    <div id="other_info"></div>
   </body>
 </html>
