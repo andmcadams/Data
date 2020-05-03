@@ -112,3 +112,4 @@ deltaTable = {
 outfile.write('var data = {}\nvar deltaData = {}\n'.format(json.dumps(table), json.dumps(deltaTable)))
 outfile.write('var players = {}\n'.format(json.dumps(players, sort_keys=True)))
 outfile.write('var avg_max = {}\n'.format(json.dumps(avg_max, sort_keys=True)))
+outfile.write('var minValues = [-1, 50, 50, 50, 10, 50, 50, 50, 10, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 10, 50, 50, 50, 50, 50, 2, 10, 50, 50, 10, 50, 10, 50, 50, 2, 10, 50, 50, 50, 50]\n')
