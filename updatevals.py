@@ -26,16 +26,17 @@ for file in filenames:
 
 	row = fileReader.__next__()
 	row = fileReader.__next__()
+	# Wow this is shit code
 	while row != None:
 		if not row[0] in results:
 			results[row[0]] = [row[3]]
 		else:
 			results[row[0]].append(row[3])
 
-		if not row[0] in players:
-			players[row[0]] = [int(row[1])]
+		if not int(row[0]) in players:
+			players[int(row[0])] = [int(row[1])]
 		else:
-			players[row[0]].append(int(row[1]))
+			players[int(row[0])].append(int(row[1]))
 
 		try:
 			row = fileReader.__next__()
@@ -44,14 +45,14 @@ for file in filenames:
 	stats.close()
 
 	# Get max players. Note that players[k] is a list of players per day.
+# This is a very hacky work around and should be changed ASAP. This entire program (and honestly the process)
+# need to be completely rethought out and redone. Things were added that vastly complicated this and caused issues.
+temp_players = {}
+count = 1
 for k in players:
-	players[k] = max(players[k])
-
-avg_max = {}
-for k in sorted(results.keys()):
-	killarr = results[k]
-	killdelta = [int(killarr[j]) - int(killarr[max(0, j-1)]) for j in range(len(killarr))]
-	avg_max[k] = (sum(killdelta)//len(killdelta), max(killdelta))
+	temp_players[count] = max(players[k])
+	count+=1
+players = temp_players
 
 cols = []
 cols.append({'id': 'date', 'label': 'Date', 'type': 'date'})
@@ -111,5 +112,4 @@ deltaTable = {
 
 outfile.write('var data = {}\nvar deltaData = {}\n'.format(json.dumps(table), json.dumps(deltaTable)))
 outfile.write('var players = {}\n'.format(json.dumps(players, sort_keys=True)))
-outfile.write('var avg_max = {}\n'.format(json.dumps(avg_max, sort_keys=True)))
 outfile.write('var minValues = [-1, 50, 50, 50, 10, 50, 50, 50, 10, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 10, 50, 50, 50, 50, 50, 2, 10, 50, 50, 10, 50, 10, 50, 50, 2, 10, 50, 50, 50, 50]\n')
