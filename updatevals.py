@@ -16,11 +16,12 @@ except FileNotFoundError as e:
 	exit(1)
 
 results = {}
+players = {}
 
 for file in filenames:
 	stats = open('./processedresults/{}/overallstats.csv'.format(file), 'r', newline='')
 
-# Grab info form the two days
+# Grab info from the two days
 	fileReader = csv.reader(stats, delimiter=',', quotechar='|')
 
 	row = fileReader.__next__()
@@ -31,15 +32,26 @@ for file in filenames:
 		else:
 			results[row[0]].append(row[3])
 
+		if not row[0] in players:
+			players[row[0]] = [int(row[1])]
+		else:
+			players[row[0]].append(int(row[1]))
+
 		try:
 			row = fileReader.__next__()
 		except StopIteration as e:
 			break
 	stats.close()
 
+	# Get max players. Note that players[k] is a list of players per day.
+for k in players:
+	players[k] = max(players[k])
+
+avg_max = {}
 for k in sorted(results.keys()):
 	killarr = results[k]
 	killdelta = [int(killarr[j]) - int(killarr[max(0, j-1)]) for j in range(len(killarr))]
+	avg_max[k] = (sum(killdelta)//len(killdelta), max(killdelta))
 
 cols = []
 cols.append({'id': 'date', 'label': 'Date', 'type': 'date'})
@@ -97,4 +109,6 @@ deltaTable = {
 	"rows": deltaRows
 }
 
-outfile.write('var data = {}\nvar deltaData = {}'.format(json.dumps(table), json.dumps(deltaTable)))
+outfile.write('var data = {}\nvar deltaData = {}\n'.format(json.dumps(table), json.dumps(deltaTable)))
+outfile.write('var players = {}\n'.format(json.dumps(players, sort_keys=True)))
+outfile.write('var avg_max = {}\n'.format(json.dumps(avg_max, sort_keys=True)))
