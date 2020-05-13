@@ -108,8 +108,8 @@
       }
 
       function resolveBoss(bossNumber) {
-        for(let i = 1; i < view.Kb.Ff.length; i++) {
-          if (view.Kb.Ff[i]["id"] === bossNumber)
+        for(let i = 1; i < view.getNumberOfColumns(); i++) {
+          if (view.getColumnId(i) === bossNumber)
             return i;
         }
         return null;
