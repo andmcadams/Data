@@ -76,8 +76,6 @@
       var otherInfo = document.getElementById('other_info');
 
       function addInfo(infoIndex) {
-        console.log(infoIndex);
-        console.log(minValues[infoIndex]);
       // <table>
       //   <tr>
       //     <td>Minimum kills on leaderboard</td>
@@ -108,9 +106,10 @@
       }
 
       function resolveBoss(bossNumber) {
-        for(let i = 1; i < view.getNumberOfColumns(); i++) {
-          if (view.getColumnId(i) === bossNumber)
+        for(let i = 1; i < data['cols'].length; i++) {
+          if (data['cols'][i]["id"] === bossNumber) {
             return i;
+          }
         }
         return null;
       }
