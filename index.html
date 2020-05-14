@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="datavals.js"></script>
@@ -54,7 +55,17 @@
 			<option value=1>Total KC</option>
 		</select>
     <div id="chart_div"></div>
-    <div id="other_info">
+    <div class="info">
+      <div class="col">
+      <p>Maximum kills/day: <span id="maxKills"></span></p>
+      <p>Current players: <span id="currentPlayers"></span></p>
+      </div>
+        <div class="col">
+      <p>Average kills/day: <span id="avgKills"></span></p>
+      <p>Minimum kills to be on leaderboards: <span id="minKills"></span></p>
+      </div>
+    </div>
+  
     </div>
     <script type="text/javascript">
 
@@ -73,36 +84,20 @@
       var options;
       var currentView;
 
-      var otherInfo = document.getElementById('other_info');
-
       function addInfo(infoIndex) {
-      // <table>
-      //   <tr>
-      //     <td>Minimum kills on leaderboard</td>
-      //     <td>Company</td>
-      //   </tr>
-      //   <tr>
-      //     <td>Alfreds Futterkiste</td>
-      //     <td>Maria Anders</td>
-      //     <td>Germany</td>
-      //   </tr>
-      // </table>
+        let maxKills = document.getElementById('maxKills');
+        let avgKills = document.getElementById('avgKills');
+        let currentPlayers = document.getElementById('currentPlayers');
+        let minKills = document.getElementById('minKills');
+
         function numberWithCommas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
-        otherInfo.textContent = '';
-        let t  = document.createElement('table');
-        let topRow = t.insertRow();
-        let minKills = topRow.insertCell();
-        minKills.appendChild(document.createTextNode('Minimum kills to be on leaderboard: ' + minValues[infoIndex]));
-        let currentPlayers = topRow.insertCell();
-        currentPlayers.appendChild(document.createTextNode('Current players on leaderboard: ' + numberWithCommas(players[infoIndex])));
-        let bottomRow = t.insertRow();
-        let maxKills = bottomRow.insertCell();
-        maxKills.appendChild(document.createTextNode('Maximum kills per day: ' + numberWithCommas(max_day[infoIndex])));
-        let avgKills = bottomRow.insertCell();
-        avgKills.appendChild(document.createTextNode('Average kills per day: ' + numberWithCommas(avg_day[infoIndex])));
-        otherInfo.appendChild(t);
+
+        minKills.textContent = minValues[infoIndex];
+        currentPlayers.textContent = numberWithCommas(players[infoIndex]);
+        maxKills.textContent = numberWithCommas(max_day[infoIndex]);
+        avgKills.textContent = numberWithCommas(avg_day[infoIndex]);
       }
 
       function resolveBoss(bossNumber) {
