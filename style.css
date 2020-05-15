@@ -1,3 +1,12 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+h4 {
+	margin: 0;
+}
+
 div.info {
   width: 100%;
   margin-left: auto;
@@ -8,13 +17,26 @@ div.col {
   display: inline-block;
   
   text-align: left;
-  margin-right: 10%;
-  font-family: Arial, Helvetica, sans-serif;
-  
+  margin-right: 10%;  
 }
 
-div.col {
-  font-size: 1rem;
+div.col2 {
+  display: inline-block;
+  
+  text-align: left;
+  margin-right: 2%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  vertical-align: top;
+}
+
+div.selectors {
+	margin-top: 1%;
+}
+
+ol {
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 span {

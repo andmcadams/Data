@@ -7,65 +7,75 @@
   </head>
 
   <body>
-    <select onchange="updateBoss(this)">
-			<option value=11>Abyssal Sire</option>
-			<option value=12>Alchemical Hydra</option>
-			<option value=13>Barrows Chests</option>
-			<option value=14>Bryophyta</option>
-			<option value=15>Callisto</option>
-			<option value=16>Cerberus</option>
-			<option value=17>CoX</option>
-			<option value=18>Cox CM</option>
-			<option value=19>Chaos Elemental</option>
-			<option value=20>Chaos Fanatic</option>
-			<option value=21>Commander Zilyana</option>
-			<option value=22>Corporeal Beast</option>
-			<option value=23>Crazy Archaeologist</option>
-			<option value=24>Dagannoth Prime</option>
-			<option value=25>Dagannoth Rex</option>
-			<option value=26>Dagannoth Supreme</option>
-			<option value=27>Deranged Archaeologist</option>
-			<option value=28>General Graardor</option>
-			<option value=29>Giant Mole</option>
-			<option value=30>Grotesque Guardians</option>
-			<option value=31>Hespori</option>
-			<option value=32>Kalphite Queen</option>
-			<option value=33>King Black Dragon</option>
-			<option value=34>Kraken</option>
-			<option value=35>Kree'Arra</option>
-			<option value=36>K'ril Tsutsaroth</option>
-			<option value=37>Mimic</option>
-			<option value=39>Obor</option>
-			<option value=40>Sarachnis</option>
-			<option value=41>Scorpia</option>
-			<option value=42>Skotizo</option>
-			<option value=43>The Gauntlet</option>
-			<option value=44>The Corrupted Gauntlet</option>
-			<option value=45>Theatre of Blood</option>
-			<option value=46>Thermonuclear Smoke Devil</option>
-			<option value=47>TzKal-Zuk</option>
-			<option value=48>TzTok-Jad</option>
-			<option value=49>Venenatis</option>
-			<option value=50>Vet'ion</option>
-			<option value=51>Vorkath</option>
-			<option value=54>Zulrah</option>
-		</select>
-		<select onchange="updateType(this)">
-			<option value=0>Delta</option>
-			<option value=1>Total KC</option>
-		</select>
-    <div id="chart_div"></div>
-    <div class="info">
-      <div class="col">
-      <p>Maximum kills/day: <span id="maxKills"></span></p>
-      <p>Current players: <span id="currentPlayers"></span></p>
-      </div>
-        <div class="col">
-      <p>Average kills/day: <span id="avgKills"></span></p>
-      <p>Minimum kills to be on leaderboards: <span id="minKills"></span></p>
-      </div>
+    <div id="general">
+      <!-- JS generated list of bosses in order of kills per day -->
+      <h4>Most Killed Bosses Yesterday</h4>
     </div>
-  
+    <div id="specific">
+      <h4>In-depth Look</h4>
+      <div class="selectors">
+        <select onchange="updateBoss(this)">
+    			<option value=11>Abyssal Sire</option>
+    			<option value=12>Alchemical Hydra</option>
+    			<option value=13>Barrows Chests</option>
+    			<option value=14>Bryophyta</option>
+    			<option value=15>Callisto</option>
+    			<option value=16>Cerberus</option>
+    			<option value=17>CoX</option>
+    			<option value=18>Cox CM</option>
+    			<option value=19>Chaos Elemental</option>
+    			<option value=20>Chaos Fanatic</option>
+    			<option value=21>Commander Zilyana</option>
+    			<option value=22>Corporeal Beast</option>
+    			<option value=23>Crazy Archaeologist</option>
+    			<option value=24>Dagannoth Prime</option>
+    			<option value=25>Dagannoth Rex</option>
+    			<option value=26>Dagannoth Supreme</option>
+    			<option value=27>Deranged Archaeologist</option>
+    			<option value=28>General Graardor</option>
+    			<option value=29>Giant Mole</option>
+    			<option value=30>Grotesque Guardians</option>
+    			<option value=31>Hespori</option>
+    			<option value=32>Kalphite Queen</option>
+    			<option value=33>King Black Dragon</option>
+    			<option value=34>Kraken</option>
+    			<option value=35>Kree'Arra</option>
+    			<option value=36>K'ril Tsutsaroth</option>
+    			<option value=37>Mimic</option>
+    			<option value=39>Obor</option>
+    			<option value=40>Sarachnis</option>
+    			<option value=41>Scorpia</option>
+    			<option value=42>Skotizo</option>
+    			<option value=43>The Gauntlet</option>
+    			<option value=44>The Corrupted Gauntlet</option>
+    			<option value=45>Theatre of Blood</option>
+    			<option value=46>Thermonuclear Smoke Devil</option>
+    			<option value=47>TzKal-Zuk</option>
+    			<option value=48>TzTok-Jad</option>
+    			<option value=49>Venenatis</option>
+    			<option value=50>Vet'ion</option>
+    			<option value=51>Vorkath</option>
+    			<option value=54>Zulrah</option>
+    		</select>
+    		<select onchange="updateType(this)">
+    			<option value=0>Delta</option>
+    			<option value=1>Total KC</option>
+    		</select>
+      </div>
+
+      <div id="chart_div"></div>
+        <div class="info">
+            <div class="col">
+          <p>Maximum kills/day: <span id="maxKills"></span></p>
+          <p>Current players: <span id="currentPlayers"></span></p>
+            </div>
+            <div class="col">
+          <p>Average kills/day: <span id="avgKills"></span></p>
+          <p>Minimum kills to be on leaderboards: <span id="minKills"></span></p>
+            </div>
+        </div>
+      </div>
+
     </div>
     <script type="text/javascript">
 
@@ -83,6 +93,34 @@
       var deltaView;
       var options;
       var currentView;
+
+      function generateList() {
+        let bossList = [];
+        let lastRow = deltaData['rows'].length-1
+        for(let i = 1; i < data['cols'].length; i++) {
+          bossList.push( [data['cols'][i]['label'], deltaData['rows'][lastRow]["c"][i]["v"]] );
+        }
+        bossList.sort(function(a, b) {
+          return b[1] - a[1];
+        });
+
+        let general = document.getElementById("general");
+        for(let i = 0; i < bossList.length; i+=10) {
+          let listDiv = document.createElement("div");
+          listDiv.className = "col2";
+          let ol = document.createElement("ol");
+          ol.setAttribute("start", i+1);
+          for(let j = i; j < Math.min(bossList.length, i+10); j++) {
+            let li = document.createElement("li");
+            li.textContent = bossList[j][0];
+            ol.appendChild(li);
+          }
+          listDiv.append(ol);
+          general.append(listDiv);
+        }
+      }
+
+      generateList();
 
       function addInfo(infoIndex) {
         let maxKills = document.getElementById('maxKills');
