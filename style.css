@@ -1,6 +1,5 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 1rem;
 }
 
 h4 {
@@ -13,23 +12,6 @@ div.info {
   margin-right: auto;
 }
 
-div.col {
-  display: inline-block;
-  
-  text-align: left;
-  margin-right: 10%;  
-}
-
-div.col2 {
-  display: inline-block;
-  
-  text-align: left;
-  margin-right: 2%;
-  margin-top: 1%;
-  margin-bottom: 1%;
-  vertical-align: top;
-}
-
 div.selectors {
 	margin-top: 1%;
 }
@@ -37,8 +19,60 @@ div.selectors {
 ol {
 	margin-top: 0;
 	margin-bottom: 0;
+	font-size: 2vh;
 }
 
 span {
-  font-size: 1.25rem;
+  font-size: 2.25vh;
+}
+
+div.col {
+  display: block;
+  text-align: left;
+  font-size: 2.2vh;
+}
+
+div.col2 {
+  display: block;
+  text-align: left;
+  vertical-align: top;
+}
+
+div.col2 + div.col2 {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	/* For desktop: */
+	div.col {
+	  display: inline-block;
+	  
+	  text-align: left;
+	  margin-right: 10%;
+
+	  font-size: 1.2vw;
+	}
+
+	div.col2 {
+	  display: inline-block;
+	  width: 18%;
+	  text-align: left;
+	  margin-right: 2%;
+	  margin-top: 1%;
+	  margin-bottom: 1%;
+	  vertical-align: top;
+	}
+
+	div.col2 + div.col2 {
+		display: inline-block;
+	}
+
+	ol {
+		font-size: 1vw;
+	}
+
+	span {
+  	font-size: 1.25vw;
+	}
+
 }
