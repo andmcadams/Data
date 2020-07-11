@@ -1,0 +1,73 @@
+Trying queue: [1, 101, 201, 301, 401, 501, 601, 701, 801, 901]
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores1
+Received response...
+{'errorMessage': '2020-07-11T06:13:39.872Z bb4de40a-d258-4f0c-bd45-1e61f1b89bc7 Task timed out after 120.10 seconds'}
+Trying queue: [1, 101, 201, 301, 401, 501, 601, 701, 801, 901]
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores6
+Received response...
+{'status': 200, 'body': '{"pageData": {"1": [[3451, 3333, 1885, 1661, 1350, 1337, 1252, 1232, 1219, 1200, 1174, 1134, 1119, 1036, 1026, 1005, 1001, 1000, 1000, 1000, 970, 900, 833, 793, 720], false], "101": [[53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53], false], "201": [null, false], "301": [null, false], "401": [null, false], "501": [null, false], "601": [null, false], "701": [null, false], "801": [null, false], "901": [null, false]}}'}
+{'1': [[3451, 3333, 1885, 1661, 1350, 1337, 1252, 1232, 1219, 1200, 1174, 1134, 1119, 1036, 1026, 1005, 1001, 1000, 1000, 1000, 970, 900, 833, 793, 720], False], '101': [[53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53], False], '201': [None, False], '301': [None, False], '401': [None, False], '501': [None, False], '601': [None, False], '701': [None, False], '801': [None, False], '901': [None, False]}
+dict_keys(['1', '101', '201', '301', '401', '501', '601', '701', '801', '901'])
+[1, 101]
+Looking for last page...
+Trying page 101
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores2
+{'101': [[53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53, 53], False]}
+dict_keys(['101'])
+[101]
+Trying page 151
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores2
+{'151': [None, False]}
+dict_keys(['151'])
+[]
+Trying page 126
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores1
+{'126': [None, None]}
+dict_keys(['126'])
+[]
+Trying page 114
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores4
+{'114': [None, None]}
+dict_keys(['114'])
+[]
+Trying page 108
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores8
+{'108': [None, None]}
+dict_keys(['108'])
+[]
+Trying page 105
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores3
+{'105': [None, None]}
+dict_keys(['105'])
+[]
+Trying page 104
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores2
+{'104': [[52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52], False]}
+dict_keys(['104'])
+[104]
+Trying page 105
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores8
+{'105': [[52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52, 52], False]}
+dict_keys(['105'])
+[105]
+Trying page 106
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores8
+{'106': [[52, 52, 52, 52, 52, 52, 52, 52, 52, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51], False]}
+dict_keys(['106'])
+[106]
+Trying page 107
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores6
+{'107': [[51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51], False]}
+dict_keys(['107'])
+[107]
+Trying page 108
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores7
+{'108': [[51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51], False]}
+dict_keys(['108'])
+[108]
+Trying page 109
+arn:aws:lambda:us-east-1:858228748133:function:getHiscores3
+{'109': [[51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51, 51], False]}
+dict_keys(['109'])
+[109]
+Could not find last page after 12 attempts. Aborting...
