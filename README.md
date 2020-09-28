@@ -18,3 +18,5 @@ Missing/Incomplete Results due to Hiscores Being Down
 * 2020-04-11
 * 2020-04-12
 * 2020-04-19
+* 2020-09-26 (script failed to run)
+* 2020-09-28 (script failed to run)
