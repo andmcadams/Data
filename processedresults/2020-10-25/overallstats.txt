@@ -1,0 +1,246 @@
+11 - Abyssal Sire
+	Players:             	81197
+	Pages:               	3248
+	Total KC:            	35376981
+	Average KC/Player:   	435.69320295084793
+
+12 - Alchemical Hydra
+	Players:             	76779
+	Pages:               	3072
+	Total KC:            	68969884
+	Average KC/Player:   	898.290991026192
+
+13 - Barrows Chests
+	Players:             	343038
+	Pages:               	13722
+	Total KC:            	91300112
+	Average KC/Player:   	266.1515983651957
+
+14 - Bryophyta
+	Players:             	36620
+	Pages:               	1465
+	Total KC:            	1167358
+	Average KC/Player:   	31.87760786455489
+
+15 - Callisto
+	Players:             	47870
+	Pages:               	1915
+	Total KC:            	11513556
+	Average KC/Player:   	240.51715061625234
+
+16 - Cerberus
+	Players:             	114028
+	Pages:               	4562
+	Total KC:            	85001841
+	Average KC/Player:   	745.44709194233
+
+17 - CoX
+	Players:             	97230
+	Pages:               	3890
+	Total KC:            	36240029
+	Average KC/Player:   	372.7247660187185
+
+18 - CoX Challenge Mode
+	Players:             	11427
+	Pages:               	458
+	Total KC:            	1252164
+	Average KC/Player:   	109.57941716986086
+
+19 - Chaos Elemental
+	Players:             	32946
+	Pages:               	1318
+	Total KC:            	5564723
+	Average KC/Player:   	168.90435864748378
+
+20 - Chaos Fanatic
+	Players:             	46888
+	Pages:               	1876
+	Total KC:            	8272495
+	Average KC/Player:   	176.4309631462208
+
+21 - Commander Zilyana
+	Players:             	78490
+	Pages:               	3140
+	Total KC:            	27868742
+	Average KC/Player:   	355.0610523633584
+
+22 - Corporeal Beast
+	Players:             	60610
+	Pages:               	2425
+	Total KC:            	15875743
+	Average KC/Player:   	261.9327338722983
+
+23 - Crazy Archaeologist
+	Players:             	59035
+	Pages:               	2362
+	Total KC:            	8015922
+	Average KC/Player:   	135.78253578385704
+
+24 - Dagannoth Prime
+	Players:             	146151
+	Pages:               	5847
+	Total KC:            	59020994
+	Average KC/Player:   	403.83571785345293
+
+25 - Dagannoth Rex
+	Players:             	204491
+	Pages:               	8180
+	Total KC:            	80477992
+	Average KC/Player:   	393.55273337212884
+
+26 - Dagannoth Supreme
+	Players:             	147245
+	Pages:               	5890
+	Total KC:            	60178158
+	Average KC/Player:   	408.6940677102788
+
+27 - Deranged Archaeologist
+	Players:             	4655
+	Pages:               	187
+	Total KC:            	486126
+	Average KC/Player:   	104.43093447905478
+
+28 - General Graardor
+	Players:             	160345
+	Pages:               	6414
+	Total KC:            	63449634
+	Average KC/Player:   	395.7069693473448
+
+29 - Giant Mole
+	Players:             	116395
+	Pages:               	4656
+	Total KC:            	48807728
+	Average KC/Player:   	419.3283903947764
+
+30 - Grotesque Guardians
+	Players:             	83938
+	Pages:               	3358
+	Total KC:            	20707145
+	Average KC/Player:   	246.69571588553455
+
+31 - Hespori
+	Players:             	204592
+	Pages:               	8184
+	Total KC:            	8643636
+	Average KC/Player:   	42.24816219598029
+
+32 - Kalphite Queen
+	Players:             	69459
+	Pages:               	2779
+	Total KC:            	20737892
+	Average KC/Player:   	298.5630659813703
+
+33 - King Black Dragon
+	Players:             	245613
+	Pages:               	9825
+	Total KC:            	71564571
+	Average KC/Player:   	291.3712669931966
+
+34 - Kraken
+	Players:             	231780
+	Pages:               	9272
+	Total KC:            	311705085
+	Average KC/Player:   	1344.8316722754337
+
+35 - Kree'Arra
+	Players:             	61599
+	Pages:               	2464
+	Total KC:            	24299088
+	Average KC/Player:   	394.4721180538645
+
+36 - K'ril Tsutsaroth
+	Players:             	73136
+	Pages:               	2926
+	Total KC:            	17485417
+	Average KC/Player:   	239.08084937650403
+
+37 - Mimic
+	Players:             	34456
+	Pages:               	1379
+	Total KC:            	137839
+	Average KC/Player:   	4.00043533782215
+
+39 - Obor
+	Players:             	59807
+	Pages:               	2393
+	Total KC:            	1516007
+	Average KC/Player:   	25.34832043071881
+
+40 - Sarachnis
+	Players:             	37841
+	Pages:               	1514
+	Total KC:            	8518217
+	Average KC/Player:   	225.10549404085515
+
+41 - Scorpia
+	Players:             	35330
+	Pages:               	1414
+	Total KC:            	8650891
+	Average KC/Player:   	244.85963770166998
+
+42 - Skotizo
+	Players:             	199025
+	Pages:               	7961
+	Total KC:            	5434356
+	Average KC/Player:   	27.304891345308377
+
+43 - The Gauntlet
+	Players:             	9881
+	Pages:               	396
+	Total KC:            	970974
+	Average KC/Player:   	98.26677461795364
+
+44 - The Corrupted Gauntlet
+	Players:             	18013
+	Pages:               	721
+	Total KC:            	2162012
+	Average KC/Player:   	120.02509298839726
+
+45 - Theatre of Blood
+	Players:             	20330
+	Pages:               	814
+	Total KC:            	9572742
+	Average KC/Player:   	470.8677816035416
+
+46 - Thermonuclear Smoke Devil
+	Players:             	104457
+	Pages:               	4179
+	Total KC:            	75635436
+	Average KC/Player:   	724.0820241821993
+
+47 - TzKal-Zuk
+	Players:             	4766
+	Pages:               	191
+	Total KC:            	40243
+	Average KC/Player:   	8.443768359211079
+
+48 - TzTok-Jad
+	Players:             	49795
+	Pages:               	1992
+	Total KC:            	973014
+	Average KC/Player:   	19.540395622050408
+
+49 - Venenatis
+	Players:             	58724
+	Pages:               	2349
+	Total KC:            	18130208
+	Average KC/Player:   	308.7359171718548
+
+50 - Vet'ion
+	Players:             	20959
+	Pages:               	839
+	Total KC:            	4661883
+	Average KC/Player:   	222.42869411708574
+
+51 - Vorkath
+	Players:             	244226
+	Pages:               	9770
+	Total KC:            	148992454
+	Average KC/Player:   	610.0597561275213
+
+54 - Zulrah
+	Players:             	199161
+	Pages:               	7967
+	Total KC:            	226889063
+	Average KC/Player:   	1139.224361195214
+
