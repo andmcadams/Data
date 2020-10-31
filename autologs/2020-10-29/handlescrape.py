@@ -22,7 +22,7 @@ for page in sorted(pages.keys(), key=lambda kv: int(kv)):
 	firstCount = pages[page][0]
 	newLastCount = pages[page][-1]
 	maxDiff = 25*(int(page)-int(lastPage) - 1)*(lastCount-firstCount)
-	if maxDiff != 0:
+	if maxDiff != 0 and lastPage != 0:
 		print('Difference of {} between pages {} and {}. Max difference: {}'.format((lastCount-firstCount), lastPage, page, maxDiff))
 		totalMaxDiff += maxDiff
 
